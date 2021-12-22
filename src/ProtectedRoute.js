@@ -1,8 +1,9 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import {Routes, Route, Redirect } from "react-router-dom";
 
 const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
   return (
+    <Routes>
     <Route
       {...rest}
       render={(props) => {
@@ -13,6 +14,7 @@ const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
           );
       }}
     />
+    </Routes>
   );
 };
 

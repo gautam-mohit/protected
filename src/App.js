@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link,Routes } from "react-router-dom";
 import HomeComponent from "./pages/HomeComponent";
 import AccountComponent from "./pages/AccountComponent";
 import CardsComponent from "./pages/CardsComponent";
-// import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './ProtectedRoute';
 import useAuth from "./useAuth";
 
 function App() {
@@ -26,8 +26,8 @@ function App() {
       
           <Routes>
             <Route path="/" exact element={ <HomeComponent/>} ></Route>
-            <Route path="/accounts"  element={ <AccountComponent/>} ></Route>
             <Route path="/cards"  element={< CardsComponent/>} ></Route>
+            <ProtectedRoute path="/accounts" element={<AccountComponent/>} auth={true}/>
           </Routes>
       </Router>
     </div>
